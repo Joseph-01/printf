@@ -105,7 +105,7 @@ if (width > length)
 for (i = 1; i < width - length + 1; i++)
 buffer[i] = padd;
 buffer[i] = '\0';
-if (flags & F_DASH && padd == ' ')/* Asign extra char to left of buffer */
+if (flags && F_DASH && padd == ' ')/* Asign extra char to left of buffer */
 {
 if (extra_c)
 buffer[--ind] = extra_c;
@@ -121,8 +121,8 @@ else if (!(flags & F_DASH) && padd == '0')/* extra char to left of padd */
 {
 if (extra_c)
 buffer[--padd_start] = extra_c;
-return (write(1, &buffer[padd_start], i - padd_start));
-write(1, &buffer[ind], length - (1 - padd_start));
+return (write(1, &buffer[padd_start], i - padd_start) +
+write(1, &buffer[ind], length - (1 - padd_start)));
 }
 }
 if (extra_c)
