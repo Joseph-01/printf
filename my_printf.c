@@ -30,12 +30,11 @@ else
 {
 print_buffer(buffer, &buff_ind);
 flags = get_flags(format, &i);
-width = get_width(format, &i, list);
-precision = get_precision(format, &i, list, buffer
-, flags, width, precision, size);
+width = get_width(format, &i, args);
+precision = get_precision(format, &i, args);
 size = get_size(format, &i);
 i++;
-printed = print_handler(format, &i, list, buffer,
+printed = print_handler(format, &i, args, buffer,
 flags, width, precision, size);
 if (printed == 1)
 {

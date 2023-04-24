@@ -17,7 +17,7 @@ char extra_c = 0, padd = ' ';
 int ind = BUFF_SIZE - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
 unsigned long num_addrs;
 char map_to[] = "0123456789abcdef";
-void *addrs = va_arg(types, void *);
+void *addrs = va_arg(conversions, void *);
 UNUSED(width);
 UNUSED(size);
 if (addrs == NULL)
@@ -53,7 +53,7 @@ width, flags, padd, extra_c, padd_start));
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_non_printable(va_list types, char buffer[],
+int print_non_printable(va_list conversions, char buffer[],
 int flags, int width, int precision, int size)
 {
 int i = 0, offset = 0;

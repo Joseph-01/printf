@@ -121,8 +121,8 @@ else if (!(flags & F_DASH) && padd == '0')/* extra char to left of padd */
 {
 if (extra_c)
 buffer[--padd_start] = extra_c;
-return (write(1, &buffer[padd_start], i - padd_start)
-write(1, &buffer[ind], length - (1 - padd_start)));
+return (write(1, &buffer[padd_start], i - padd_start));
+write(1, &buffer[ind], length - (1 - padd_start));
 }
 }
 if (extra_c)
