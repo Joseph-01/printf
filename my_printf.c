@@ -33,7 +33,7 @@ size = get_size(format, &i);
 ++i;
 printed = print_handler(format, &i, args, buffer,
 flags, width, precision, size);
-if (printed == 1)
+if (printed == -1)
 return (-1);
 printed_chars += printed;
 }

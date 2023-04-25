@@ -22,11 +22,12 @@
  * @frmt: the format
  * @fn: function pointer
  */
-typedef struct frmt
+struct frmt
 {
 char frmt;
 int (*fn)(va_list, char[], int, int, int, int);
-} frmt_t;
+};
+typedef struct frmt frmt_t;
 int _printf(const char *format, ...);
 int print_handler(const char *fmt, int *i, va_list args,
 char buffer[], int flags, int width,
