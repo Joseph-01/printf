@@ -26,7 +26,7 @@ typedef struct frmt
 {
 char frmt;
 int (*fn)(va_list, char[], int, int, int, int);
-} frm_t;
+} frmt_t;
 int _printf(const char *format, ...);
 int print_handler(const char *fmt, int *i, va_list args,
 char buffer[], int flags, int width,

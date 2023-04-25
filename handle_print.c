@@ -15,7 +15,7 @@ int print_handler(const char *frmt, int *ind, va_list args, char buffer[],
 int flags, int width, int precision, int size)
 {
 int i, unknow_len = 0, printed_chars = -1;
-frm_t frmt_conversions[] = {
+frmt_t frmt_conversions[] = {
 {'c', print_char}, {'s', print_string}, {'%', print_percent},
 {'i', print_int}, {'d', print_int}, {'b', print_binary},
 {'u', print_unsigned}, {'o', print_octal}, {'x', print_hexadecimal},
